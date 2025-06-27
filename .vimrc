@@ -6,9 +6,9 @@ augroup filetype_vim
 	    autocmd!
 	        autocmd FileType vim setlocal foldmethod=marker
 augroup END
-" preserve views
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+" preserve views and folds
+autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent! loadview
 " set the colourscheme
 try
 	colorscheme habamax
@@ -70,7 +70,7 @@ xnoremap > >gv
 " map a change vim current directory to directory of open buffer
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " map netrw
-nnoremap <leader><s-e> :Explore<CR>
+nnoremap <leader><s-e> :Vexplore<CR>
 " }}}
 " status line {{{
 " Clear status line when vimrc is reloaded.
@@ -113,6 +113,8 @@ set scrolloff=2
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+" make netrw open preview windows vertically
+let netrw_preview=1
 " }}}
 " plugins {{{
 " Install vim-plug if not found
@@ -137,6 +139,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
+Plug 'tidalcycles/vim-tidal'
 let g:peekaboo_window = 'vertical botright 80new'
 let g:peekaboo_compact = "1"
 let g:mundo_width = 45
