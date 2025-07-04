@@ -140,6 +140,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-dispatch'
 Plug 'tidalcycles/vim-tidal'
+Plug 'ziglang/zig.vim'
 let g:peekaboo_window = 'vertical botright 80new'
 let g:peekaboo_compact = "1"
 let g:mundo_width = 45
@@ -147,5 +148,6 @@ let g:mundo_preview_height = 25
 let g:gutentags_modules = ['ctags']
 let g:gutentags_enabled = 1
 let g:gutentags_project_root = ['makefile'] 
+let g:zig_fmt_autosave = 0
 call plug#end()
 " }}}
